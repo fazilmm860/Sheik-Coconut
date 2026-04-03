@@ -572,6 +572,264 @@
             .footer-grid { grid-template-columns: 1fr; }
             .collection-intro { padding: 4rem 1.5rem 2.5rem; }
         }
+
+        /* ══════════════════════════════════════════════════
+           PROCUREMENT MODAL
+           ══════════════════════════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 12, 11, 0.85); /* Dark cinematic overlay */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            width: 95%;
+            max-width: 850px;
+            height: 85vh; /* Hard constraint forces form scrolling */
+            background-color: #161A18;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.98);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        /* Modal Carousel */
+        .modal-carousel {
+            position: relative;
+            background: #0f1210;
+            height: 100%;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Ambient inner glow to make image look editorial */
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 18, 16, 0.8) 0%, transparent 40%, rgba(15, 18, 16, 0.3) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .carousel-watermark {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.9);
+            pointer-events: none;
+        }
+
+        .carousel-watermark span {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .carousel-watermark small {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--clr-sand);
+        }
+
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 4s linear;
+            transform: scale(1.05); /* Slight scale to drop into parallax */
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(1.15) brightness(0.85); /* Richer color */
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover { 
+            background: rgba(255, 255, 255, 0.15); 
+            transform: translateY(-50%) scale(1.1);
+        }
+        .carousel-btn.prev { left: 1rem; }
+        .carousel-btn.next { right: 1rem; }
+
+        /* Modal Form */
+        .modal-form-container {
+            padding: 2.5rem 2rem 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Fixed: Prevents flex centering from eating the submit button on short screens */
+            overflow-y: auto; /* Allow form to scroll inside the boundary */
+        }
+
+        .modal-header {
+            margin-bottom: 2rem;
+        }
+
+        .modal-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .modal-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 0.65rem 0.85rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .modal-input option {
+            background-color: #161A18; /* Force dark background in system dropdown */
+            color: #ffffff;
+        }
+
+        .modal-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+        textarea.modal-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .modal-submit {
+            margin-top: 1rem;
+            padding: 1rem;
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-submit:hover { background: #e0e0e0; }
+
+        .modal-msg {
+            display: none;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .modal-success { background: rgba(42, 74, 59, 0.2); color: #8FBC8F; border: 1px solid #8FBC8F; }
+        .modal-error { background: rgba(180, 50, 50, 0.1); color: #ff8c8c; border: 1px solid #ff8c8c; }
+
+        @media (max-width: 900px) {
+            .modal-card { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+            .modal-carousel { min-height: 250px; }
+            .modal-form-container { padding: 2rem; }
+        }
     </style>
 </head>
 <body>
@@ -760,6 +1018,62 @@
 
     </main>
 
+    <!-- ═══ PROCUREMENT MODAL ═══ -->
+    <div class="modal-overlay" id="procureModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModal">&times;</button>
+            
+            <!-- Carousel Side -->
+            <div class="modal-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide active"><img src="assests/products/coconut-pith.jpeg" alt="Coconut Products 1"></div>
+                    <div class="carousel-slide"><img src="assests/products/sheik CoconutOil.jpeg" alt="Coconut Products 2"></div>
+                    <div class="carousel-slide"><img src="assests/products/dry coconuts.png" alt="Coconut Products 3"></div>
+                    
+                    <!-- Overlays explicitly inside the bounding container -->
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-watermark">
+                        <small>Premium Quality</small>
+                        <span>Export Goods</span>
+                    </div>
+                    <button class="carousel-btn prev" id="carouselPrev">&#10094;</button>
+                    <button class="carousel-btn next" id="carouselNext">&#10095;</button>
+                </div>
+            </div>
+
+            <!-- Form Side -->
+            <div class="modal-form-container">
+                <div class="modal-header">
+                    <h3 class="modal-title">Procure Bulk</h3>
+                    <p class="modal-subtitle">Submit your requirements directly to our export team. We supply premium bulk quantities worldwide.</p>
+                </div>
+                
+                <form id="procureForm" class="modal-form">
+                    <input type="text" name="name" class="modal-input" placeholder="Full Name or Company *" required>
+                    <input type="email" name="email" class="modal-input" placeholder="Business Email *" required>
+                    
+                    <select name="interested_product" class="modal-input" required>
+                        <option value="" disabled selected>Select Primary Product *</option>
+                        <option value="Raw Coconuts">Raw Coconuts</option>
+                        <option value="Copra">Copra (Dry Coconut)</option>
+                        <option value="Virgin Coconut Oil">Virgin Coconut Oil</option>
+                        <option value="Coconut Pith / Peat">Coconut Pith / Peat</option>
+                        <option value="Coconut Coir">Coconut Coir</option>
+                        <option value="Coconut Fibre">Coconut Fibre</option>
+                        <option value="Mixed / Other">Mixed / Other</option>
+                    </select>
+
+                    <input type="text" name="volume" class="modal-input" placeholder="Estimated Volume (e.g., 20ft Container, 5 Tons)">
+                    
+                    <textarea name="message" class="modal-input" placeholder="Additional requirements or destination port..."></textarea>
+                    
+                    <button type="submit" class="modal-submit">Submit Inquiry</button>
+                    <div id="modalMessages"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- ═══ FOOTER ═══ -->
     <footer class="site-footer">
         <div class="container footer-grid">
@@ -838,6 +1152,102 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => revealObserver.observe(el));
+
+    /* ── Procurement Modal Logic ── */
+    const modalOverlay = document.getElementById('procureModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const procureButtons = document.querySelectorAll('.prod-cta');
+    const productSelect = document.querySelector('select[name="interested_product"]');
+
+    // Open Modal
+    procureButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Try to auto-select the product based on the card title
+            const prodInfo = e.target.closest('.prod-info');
+            if (prodInfo) {
+                const prodName = prodInfo.querySelector('.prod-name').innerText;
+                Array.from(productSelect.options).forEach(opt => {
+                    if (opt.value.toLowerCase().includes(prodName.toLowerCase()) || 
+                        prodName.toLowerCase().includes(opt.value.toLowerCase().split(' ')[0])) {
+                        productSelect.value = opt.value;
+                    }
+                });
+            }
+
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // prevent background scrolling
+        });
+    });
+
+    // Close Modal
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+
+    // Carousel Logic
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    let currentSlide = 0;
+
+    const showSlide = (index) => {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[index].classList.add('active');
+    };
+
+    prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    });
+
+    // Formspree AJAX Submission
+    const procureForm = document.getElementById('procureForm');
+    const modalMessages = document.getElementById('modalMessages');
+
+    procureForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(procureForm);
+        const submitBtn = procureForm.querySelector('.modal-submit');
+        
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        fetch('https://formspree.io/f/mlgoplqe', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                modalMessages.innerHTML = '<div class="modal-msg modal-success" style="display:block;">Inquiry sent successfully. Our team will contact you soon.</div>';
+                procureForm.reset();
+            } else {
+                modalMessages.innerHTML = '<div class="modal-msg modal-error" style="display:block;">Error submitting inquiry. Please try again or email us.</div>';
+            }
+        })
+        .catch(error => {
+            modalMessages.innerHTML = '<div class="modal-msg modal-error" style="display:block;">Network error. Please try again.</div>';
+        })
+        .finally(() => {
+            submitBtn.textContent = "Submit Inquiry";
+            submitBtn.disabled = false;
+        });
+    });
     </script>
 
 </body>

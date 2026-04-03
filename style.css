@@ -137,12 +137,16 @@ ul {
     pointer-events: auto; /* Re-enable clicks for items inside */
 }
 
-/* Float logo completely left */
+/* General Logo Styles */
 .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 0.05em;
+}
+
+/* Float logo completely left inside the header */
+.site-header .logo {
     position: absolute;
     left: 2rem;
 }
