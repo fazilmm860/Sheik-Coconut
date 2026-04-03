@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Values — SHEIK Coconut</title>
+    <meta name="description" content="Discover the values that shape Sheik Coconut: Sustainable Sourcing, Unmatched Quality, and Modern Elegance.">
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================================
+           COMPANY VALUE PAGE — PREMIUM SCROLL
+           ===================================================== */
+        
+        body {
+            background-color: var(--clr-bg);
+            color: var(--clr-text);
+        }
+
+        /* ── Header styling is now handled by the glossy pill-nav in style.css ── */
+        /* ══════════════════════════════════════════════════
+           CINEMATIC HERO
+           ══════════════════════════════════════════════════ */
+        .value-hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+        }
+
+        .hero-video-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.65;
+            filter: saturate(1.2) contrast(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15,18,16,0.3) 0%, rgba(15,18,16,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 2rem;
+            margin-top: 5rem;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(230, 213, 195, 0.8);
+            margin-bottom: 2rem;
+            display: block;
+            animation: fadeUp 1s 0.2s cubic-bezier(0.25,1,0.5,1) both;
+        }
+
+        .hero-main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 1s 0.4s cubic-bezier(0.25,1,0.5,1) both;
+        }
+
+        .hero-main-title em {
+            font-style: italic;
+            color: var(--clr-sand);
+        }
+
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeUp 1s 0.6s cubic-bezier(0.25,1,0.5,1) both;
+        }
+
+        .scroll-down-arr {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: #fff;
+            opacity: 0.6;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ══════════════════════════════════════════════════
+           INTRO SECTION
+           ══════════════════════════════════════════════════ */
+        .value-intro {
+            padding: 9rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 300;
+            line-height: 1.4;
+            color: var(--clr-text);
+            position: relative;
+        }
+
+        .intro-text::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: var(--clr-accent);
+            margin: 3rem auto 0;
+        }
+
+        /* ══════════════════════════════════════════════════
+           01. SUSTAINABLE SOURCING
+           ══════════════════════════════════════════════════ */
+        .value-section {
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sourcing-grid {
+            display: grid;
+            grid-template-columns: 5fr 6fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .value-media-block {
+            position: relative;
+            aspect-ratio: 4/5;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        }
+
+        .value-media-block video, .value-media-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.05); /* Slight scale for parallax */
+        }
+
+        .value-text-block {
+            padding-right: 2rem;
+        }
+
+        .val-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            color: var(--clr-accent);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .val-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .val-lead {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #444;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .val-desc {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .sourcing-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 2.5rem;
+        }
+
+        .pillar h5 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--clr-text);
+            margin-bottom: 0.8rem;
+        }
+
+        .pillar p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* ══════════════════════════════════════════════════
+           02. UNMATCHED QUALITY (Spotlight dark section)
+           ══════════════════════════════════════════════════ */
+        .quality-section {
+            background-color: #161A18;
+            color: #FDFBF7;
+            padding: 10rem 0;
+            position: relative;
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .quality-text-block {
+            padding-left: 2rem;
+        }
+
+        .quality-section .val-num { color: var(--clr-sand); }
+        .quality-section .val-lead { color: #E8E2D9; }
+        .quality-section .val-desc { color: rgba(232, 226, 217, 0.6); }
+
+        .quality-list {
+            list-style: none;
+            padding: 0;
+            margin: 3rem 0 0;
+        }
+
+        .quality-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(232, 226, 217, 0.8);
+            line-height: 1.5;
+        }
+
+        .quality-list li::before {
+            content: '♦';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--clr-sand);
+            font-size: 0.8rem;
+        }
+
+        .spotlight-media {
+            position: relative;
+            padding: 4rem;
+        }
+
+        .spotlight-media img {
+            width: 100%;
+            border-radius: 4px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        .spotlight-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(230, 213, 195, 0.08) 0%, transparent 60%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* ══════════════════════════════════════════════════
+           03. MODERN ELEGANCE
+           ══════════════════════════════════════════════════ */
+        .elegance-section {
+            padding: 10rem 0 12rem;
+            position: relative;
+        }
+
+        .elegance-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .elegance-text-top {
+            max-width: 700px;
+            margin-bottom: 6rem;
+        }
+
+        .elegance-banner {
+            width: 100%;
+            aspect-ratio: 21/9;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5rem;
+        }
+
+        .elegance-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.95);
+        }
+
+        .elegance-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, 10px); }
+            100% { transform: translate(-50%, 0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .sourcing-grid, .quality-grid { grid-template-columns: 1fr; gap: 4rem; }
+            .quality-grid { padding: 0 1.5rem; }
+            .quality-grid .spotlight-media { order: -1; padding: 2rem 0; }
+            .elegance-columns { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
+            .elegance-banner { aspect-ratio: 16/9; }
+            .hero-main-title { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header dark-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">SHEIK.</a>
+            </div>
+            <nav class="pill-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="story.html">Story</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="companyValue.html" class="active">Pledge</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="product.html" class="btn-primary">View Catalog</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cinematic Hero -->
+        <section class="value-hero">
+            <div class="hero-video-wrap">
+                <video src="assests/CompanyValue/Plege of Coocnut.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <span class="hero-eyebrow">The Principles Behind Sheik Coconut</span>
+                <h1 class="hero-main-title">Values That Travel<br><em>Beyond Generations.</em></h1>
+                <p class="hero-subtitle">Three generations of heritage. Built on absolute trust, rooted in sustainable responsibility, and refined by an unbroken commitment to elegance.</p>
+            </div>
+
+            <div class="scroll-down-arr">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
+        </section>
+
+        <!-- Intro -->
+        <section class="value-intro scroll-reveal">
+            <div class="container">
+                <p class="intro-text">
+                    Sheik Coconut is more than an export business — it is a heritage-led enterprise entirely shaped by responsibility, absolute quality, and timeless refinement. We do not just supply products; we supply certainty and trust.
+                </p>
+            </div>
+        </section>
+
+        <!-- 01: Sustainable Sourcing -->
+        <section class="value-section" id="sustainable-sourcing">
+            <div class="container sourcing-grid">
+                <div class="value-text-block scroll-reveal">
+                    <span class="val-num">01 / Pledge</span>
+                    <h2 class="val-title">Sustainable Sourcing</h2>
+                    <p class="val-lead">Empowering local farmers while fiercely protecting our tropical ecosystems.</p>
+                    <p class="val-desc">
+                        Our sourcing framework relies on ethical partnerships with multi-generational farmers across the tropics. We ensure fair-trade compensation, prioritize organic farming transitions, and actively invest back into the soil that grants us our premium harvests. Sustainability isn’t just a brand statement at Sheik Coconut—it is the agricultural bedrock of everything we produce.
+                    </p>
+                    
+                    <div class="sourcing-pillars">
+                        <div class="pillar">
+                            <h5>Ethical Trade</h5>
+                            <p>Directly procuring from farmers to guarantee fair value and eliminate exploitative intermediaries.</p>
+                        </div>
+                        <div class="pillar">
+                            <h5>Zero-Waste Paradigm</h5>
+                            <p>Processing every constituent of the coconut, from water to husk, minimizing ecological footprint.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="value-media-block scroll-reveal right-delay">
+                    <video src="assests/products/coconuts.mp4" autoplay muted loop playsinline class="parallax-img"></video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02: Unmatched Quality -->
+        <section class="quality-section" id="unmatched-quality">
+            <div class="container quality-grid">
+                
+                <div class="spotlight-media scroll-reveal">
+                    <div class="spotlight-glow"></div>
+                    <img src="assests/products/dry coconuts.png" alt="Premium Quality Assurance" class="parallax-img">
+                </div>
+
+                <div class="quality-text-block scroll-reveal right-delay">
+                    <span class="val-num">02 / Pledge</span>
+                    <h2 class="val-title">Unmatched Quality</h2>
+                    <p class="val-lead">Rigorous hand-selection ensures only the absolute finest coconuts reach you.</p>
+                    <p class="val-desc">
+                        Export-ready standards are uncompromising. At our facilities, every coconut traverses an intricate matrix of quality control checkpoints. We rigorously inspect size, maturity, water content, and husk integrity before it is cleared for global shipment. This guarantees the premium consistency our B2B partners worldwide depend upon.
+                    </p>
+
+                    <ul class="quality-list">
+                        <li>Strict batch-level traceability from plantation to port.</li>
+                        <li>Advanced sorting technologies paired with generations of traditional visual inspection.</li>
+                        <li>Purity and freshness preserved through temperature-controlled logistics.</li>
+                        <li>Global certification compliance suitable for top-tier retail shelves.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 03: Modern Elegance -->
+        <section class="elegance-section" id="modern-elegance">
+            <div class="container elegance-container">
+                
+                <div class="elegance-text-top scroll-reveal">
+                    <span class="val-num">03 / Pledge</span>
+                    <h2 class="val-title">Modern Elegance</h2>
+                    <p class="val-lead">Pairing pristine natural taste with an impossibly refined brand aesthetic.</p>
+                </div>
+
+                <div class="elegance-banner scroll-reveal delay-1">
+                    <img src="assests/CompanyValue/companyValue.jpeg" alt="Modern Elegance Display" class="parallax-img">
+                </div>
+
+                <div class="elegance-columns scroll-reveal delay-2">
+                    <div class="e-col">
+                        <p class="val-desc">
+                            We believe that agricultural export doesn't have to be purely utilitarian. Sheik Coconut introduces luxury visual standards to the wholesale market. From our glass jar packaging to our clean-label processing, we maintain an elegant, modern brand language that honors the pristine nature of our product.
+                        </p>
+                    </div>
+                    <div class="e-col">
+                        <p class="val-desc">
+                            This balance—authentic, heritage-driven cultivation married with contemporary consumer elegance—allows our clients to instantly inherit our brand equity. Trust isn't just felt in the taste; it's proven in the presentation.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" style="border-top:1px solid rgba(0,0,0,0.05);">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">SHEIK.</div>
+                <p>Elevating the natural essence of tropical refreshment.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="story.html">Our Story</a></li>
+                    <li><a href="product.html">Collection</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SHEIK Coconut. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Main JS for scroll-reveal animations -->
+    <script src="main.js"></script>
+</body>
+</html>

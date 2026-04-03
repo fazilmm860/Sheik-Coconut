@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHEIK - Premium Coconut Water</title>
+    <meta name="description" content="Discover the pure, natural freshness of SHEIK Coconut. Premium tropical beverages sourced sustainably.">
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">SHEIK.</a>
+            </div>
+            <nav class="pill-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="./story.html">Story</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="companyValue.html">Pledge</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="product.html" class="btn-primary">Discover More</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Canvas for Image Sequence -->
+        <section class="hero" id="hero">
+            <div class="canvas-container">
+                <canvas id="hero-canvas"></canvas>
+            </div>
+            
+            <div class="hero-content-wrapper">
+                <!-- Text blocks synchronized with scroll -->
+                <div class="hero-text-block seq-1 visible">
+                    <h1 class="hero-title">Nature’s Purest <br>Essence</h1>
+                    <p class="hero-subtitle">Harvested at the peak of freshness.</p>
+                </div>
+                
+                <div class="hero-text-block seq-2">
+                    <h2 class="hero-title-small">Tropical Origin</h2>
+                    <p class="hero-subtitle">Sourced from the heart of pristine, sun-drenched shores.</p>
+                </div>
+
+                <div class="hero-text-block seq-3 bottom-right">
+                    <h2 class="hero-title-small">Refreshing Taste</h2>
+                    <p class="hero-subtitle">A sip of luxury that revitalizes your body and soul.</p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to Explore</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section-spacing" id="about">
+            <div class="container dual-col">
+                <div class="about-content scroll-reveal">
+                    <span class="eyebrow">Our Heritage</span>
+                    <h2 class="section-title">A Symphony of Tropical Elegance.</h2>
+                    <p class="section-body">
+                        At SHEIK, we believe true luxury comes from nature. Driven by an unrelenting quest for purity, every drop of our coconut water is a testament to sustainable harvesting and refined taste.
+                        We craft an experience that transcends a simple beverage, offering a moment of cinematic escape.
+                    </p>
+                    <a href="story.html" class="link-btn">Read our story</a>
+                </div>
+                <div class="about-visual scroll-reveal right-delay">
+                    <div class="visual-panel">
+                        <img 
+                            src="assests/story/sheikCoconut.png" 
+                            alt="SHEIK Coconut Water" 
+                            class="coconut-img"
+                        />
+                        <div class="visual-inner glass-panel">
+                            <h3>100%</h3>
+                            <p>Pure Coconut</p>
+                        </div>
+                    </div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section (3D Coverflow Carousel) -->
+        <section class="products section-spacing dark-bg" id="products">
+            <div class="container coverflow-wrapper">
+                <div class="section-header text-center scroll-reveal">
+                    <span class="eyebrow">Our Premium Products</span>
+                    <h2 class="section-title">Designed for the Refined.</h2>
+                    <p class="section-body mx-auto coverflow-subtitle">Natural quality, wholesale-ready supply, and export-focused coconut products from Sheik Coconut.</p>
+                </div>
+                
+                <div class="coverflow-container scroll-reveal delay-1">
+                    <div class="coverflow-track" id="cf-track">
+                        <!-- Card 1 -->
+                        <div class="coverflow-card">
+                            <div class="cf-image-wrapper">
+                                <img src="assests/products/sheik CoconutOil.jpeg" alt="Coconut Oil" loading="lazy">
+                            </div>
+                            <div class="cf-content">
+                                <h3 class="cf-title">Coconut Oil</h3>
+                                <p class="cf-desc">Pure, aromatic, and naturally extracted.</p>
+                                <a href="product.html" class="cf-btn">Explore</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="coverflow-card">
+                            <div class="cf-image-wrapper">
+                                <img src="assests/products/Sheik Coconut.jpeg" alt="Tender Coconut" loading="lazy">
+                            </div>
+                            <div class="cf-content">
+                                <h3 class="cf-title">Tender Coconut</h3>
+                                <p class="cf-desc">Refreshing natural sweetness and hydration.</p>
+                                <a href="product.html" class="cf-btn">Explore</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="coverflow-card">
+                            <div class="cf-image-wrapper">
+                                <img src="assests/products/Dry coconut.png" alt="Dried Coconut" loading="lazy">
+                            </div>
+                            <div class="cf-content">
+                                <h3 class="cf-title">Dried Coconut Products</h3>
+                                <p class="cf-desc">Carefully processed to retain rich flavor.</p>
+                                <a href="product.html" class="cf-btn">Explore</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="coverflow-card">
+                            <div class="cf-image-wrapper">
+                                <img src="assests/products/coconut-pith.jpeg" alt="Coconut Pith" loading="lazy">
+                            </div>
+                            <div class="cf-content">
+                                <h3 class="cf-title">Coconut Pith</h3>
+                                <p class="cf-desc">Eco-friendly agriculture and soil conditioning.</p>
+                                <a href="product.html" class="cf-btn">Explore</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="coverflow-card">
+                            <div class="cf-image-wrapper">
+                                <img src="assests/products/coconut-fibre.jpeg" alt="Coconut Coir" loading="lazy">
+                            </div>
+                            <div class="cf-content">
+                                <h3 class="cf-title">Coconut Coir</h3>
+                                <p class="cf-desc">Durable, versatile, and highly resilient.</p>
+                                <a href="product.html" class="cf-btn">Explore</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="coverflow-card">
+                            <div class="cf-image-wrapper">
+                                <img src="assests/products/Coconut-fibre-2.jpeg" alt="Coconut Fibre" loading="lazy">
+                            </div>
+                            <div class="cf-content">
+                                <h3 class="cf-title">Coconut Fibre</h3>
+                                <p class="cf-desc">Sustainable extraction for industrial goods.</p>
+                                <a href="product.html" class="cf-btn">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coverflow-navigation scroll-reveal delay-2">
+                    <button class="cf-nav-btn prev" id="cf-prev">&#10094;</button>
+                    <div class="cf-pagination" id="cf-pagination"></div>
+                    <button class="cf-nav-btn next" id="cf-next">&#10095;</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Company Values / Our Pledge (Editorial Asymmetry) -->
+        <section class="pledge-editorial-section section-spacing" id="company">
+            <div class="container pledge-editorial-container">
+                <div class="pledge-image-block scroll-reveal">
+                    <!-- Premium Tropical Image from Unsplash -->
+                    <img src="assests/CompanyValue/companyValue.jpeg" alt="Sustainable Tropical Harvesting" class="pledge-img">
+                    <div class="pledge-img-accent"></div>
+                </div>
+                
+                <div class="pledge-text-block scroll-reveal right-delay">
+                    <div class="pledge-text-inner soft-shadow">
+                        <span class="eyebrow">Our Pledge</span>
+                        <h2 class="section-title">A Promise Nested in Nature.</h2>
+                        <p class="pledge-intro">
+                            At SHEIK, we believe true luxury stems from conscious choices. Our commitment elevates both the Earth and the essence of your refreshment.
+                        </p>
+                        
+                        <div class="pledge-list">
+                            <a href="companyValue.html#sustainable-sourcing" class="pledge-list-item hover-trigger" style="text-decoration: none;">
+                                <span class="pledge-number">01</span>
+                                <div class="pledge-item-content">
+                                    <h4>Sustainable Sourcing</h4>
+                                    <p>Empowering local farmers while fiercely protecting our tropical ecosystems.</p>
+                                </div>
+                            </a>
+                            <a href="companyValue.html#unmatched-quality" class="pledge-list-item hover-trigger" style="text-decoration: none;">
+                                <span class="pledge-number">02</span>
+                                <div class="pledge-item-content">
+                                    <h4>Unmatched Quality</h4>
+                                    <p>Rigorous hand-selection ensures only the absolute finest coconuts reach you.</p>
+                                </div>
+                            </a>
+                            <a href="companyValue.html#modern-elegance" class="pledge-list-item hover-trigger" style="text-decoration: none;">
+                                <span class="pledge-number">03</span>
+                                <div class="pledge-item-content">
+                                    <h4>Modern Elegance</h4>
+                                    <p>Pairing pristine natural taste with an impossibly refined brand aesthetic.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">SHEIK.</div>
+                <p>Elevating the natural essence of tropical refreshment.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="product.html">Collection</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SHEIK Coconut. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

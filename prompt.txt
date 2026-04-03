@@ -1,0 +1,89 @@
+Use this prompt for Antigravity:
+
+Create a **premium, cinematic, modern landing website** for a **coconut brand / tropical beverage brand** using only **HTML, CSS, and JavaScript**. The full website must feel **luxury, classy, immersive, smooth, and high-end**, like a premium beverage or lifestyle brand site. The design should be **clean but visually rich**, with **parallax motion, scroll-triggered animation, layered depth, elegant transitions, and interactive effects** throughout the page.
+
+Build the website with these sections in this order:
+
+1. **Header**
+2. **Hero section**
+3. **About section**
+4. **Product section**
+5. **Company section**
+6. **Footer**
+
+Overall design direction:
+Use a **premium tropical aesthetic** with a balance of **modern minimalism and cinematic storytelling**. The visuals should feel fresh, natural, glossy, and refined. Use a color palette inspired by **coconut, sand, ocean, tropical green, warm white, and luxury earthy tones**. Typography should look elegant and premium. The spacing must feel expensive and uncluttered. Add **subtle glassmorphism where suitable**, soft shadows, layered backgrounds, and smooth interactive hover states.
+
+Technical requirement:
+Generate the full site in **HTML, CSS, and JavaScript only**. The code should be well-structured, responsive, and visually polished. Add smooth scrolling and performance-friendly animation.
+
+Header requirements:
+Create a classy fixed header with brand logo on the left and navigation links on the right. The header should become slightly condensed or styled differently on scroll. Include smooth hover effects for nav links and a premium CTA button such as “Explore Products” or “Discover More”. Make the header semi-transparent at the top and more solid on scroll.
+
+Hero section requirements:
+The hero section must be the main immersive storytelling area. Use uploaded **video frames / image sequence from the images folder** to create a **scroll-driven frame-by-frame animation** in the hero area. As the user scrolls, the frame sequence should animate smoothly and replace the normal static hero background. This hero should feel like a cinematic product reveal.
+
+Important text behavior for the hero scroll animation:
+Do not use one huge centered word. Instead, place the text in a more elegant editorial layout:
+
+* Move text content to the **top-left area** and also use supporting text in the **lower empty space** where appropriate.
+* Show a **title and a small subtitle**, not just one large word.
+* Keep the font size refined, smaller, and premium.
+* Make sure the text blends correctly with the background and remains readable during the animation.
+* The text should **change dynamically as the user scrolls**, matching the hero frame animation and explaining different product features or brand highlights.
+
+Example dynamic content behavior:
+As the scroll animation progresses, update the title/subtitle content to highlight different points such as:
+
+* Natural freshness
+* Pure coconut water
+* Tropical origin
+* Refreshing taste
+* Premium quality
+* Sustainable sourcing
+
+Hero styling:
+Use layered gradients, subtle motion overlays, cinematic lighting feel, and scroll-based opacity/transform changes. The hero must feel immersive and premium, not cluttered.
+
+About section requirements:
+Create an elegant About section that explains the brand story. Use split layout with refined typography and image/media support. Add reveal animations on scroll. Include a classy headline, short brand story, and supporting content blocks. Use parallax image movement or floating elements for visual richness.
+
+Product section requirements:
+Design a premium product showcase section with visually attractive product cards or feature panels. Each product block should have hover effects, subtle tilt or depth, animated reveal, and elegant transitions. Highlight freshness, ingredients, benefits, packaging, or product variants. Use scroll-triggered entrance animations and layered presentation. Make the section feel luxurious and conversion-focused.
+
+Company section requirements:
+Create a company / brand values section with a strong visual layout. Include content such as mission, quality promise, sustainability, heritage, or craftsmanship. Use animated counters, reveal effects, floating decorative elements, or timeline-style presentation. This section should feel trustworthy and sophisticated.
+
+Footer requirements:
+Create a polished premium footer with logo, navigation links, company info, contact details, social icons, and copyright text. Add subtle hover animations and maintain the same classy visual language as the rest of the site.
+
+Animation and interaction requirements:
+
+* Add **parallax scrolling effects**
+* Add **scroll-triggered reveal animations**
+* Add **frame-by-frame scroll animation in hero using uploaded images folder**
+* Add **smooth section transitions**
+* Add **text transitions tied to scroll progress**
+* Add **hover effects on buttons, cards, and links**
+* Add **light floating motion for decorative elements**
+* Add **sticky / dynamic header behavior**
+* Add subtle **fade, slide, scale, blur-to-sharp, and transform animations**
+* Make all animations feel smooth, premium, and not excessive
+
+Responsive behavior:
+The site must work beautifully on desktop, tablet, and mobile. On smaller screens, keep the design premium but simplify animations where needed for performance. Ensure the hero text remains readable and well-positioned on all screen sizes.
+
+Content tone:
+Keep all text elegant, premium, minimal, and brand-focused. Avoid generic filler text. Write copy that sounds like a luxury tropical beverage brand.
+
+Code quality expectations:
+Return complete production-style code with separate or clearly structured HTML, CSS, and JavaScript. Use clean naming, organized sections, comments where needed, and polished styling. The final result should feel like a **high-end interactive brand website**, not a basic landing page.
+
+Extra polish:
+Add loading smoothness, elegant section spacing, subtle glow or light effects, premium buttons, rich typography hierarchy, and cinematic storytelling flow from one section to the next.
+
+You can also add this final instruction at the end:
+
+“Use the uploaded hero frames from the images folder to build a scroll-controlled image sequence animation in the hero section. Synchronize text updates with the scroll progress. Keep the text smaller, refined, positioned mostly at the top-left and lower supporting areas, and make the whole site feel luxurious, immersive, and modern.”
+
+I can also make this into a more tool-specific prompt for Antigravity with stricter UI instructions.
