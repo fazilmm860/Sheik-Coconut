@@ -195,7 +195,7 @@
                     <!-- Contact Form -->
                     <div class="contact-form">
                         <div id="form-messages"></div>
-                        <form id="contactForm" action="contact.php" method="POST">
+                        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" class="form-control" required placeholder="John Doe">
@@ -268,17 +268,24 @@
             e.preventDefault();
             const formData = new FormData(form);
 
-            fetch('contact.php', {
+            // Change YOUR_FORM_ID to the actual ID provided when you sign up at Formspree.io
+            fetch('https://formspree.io/f/mlgoplqe', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             })
-            .then(response => response.text())
-            .then(data => {
-                formMessages.innerHTML = '<div class="success-msg" style="display:block;">Thank you! Your message has been sent successfully. We will get back to you shortly.</div>';
-                form.reset();
+            .then(response => {
+                if (response.ok) {
+                    formMessages.innerHTML = '<div class="success-msg" style="display:block;">Thank you! Your message has been sent successfully. We will get back to you shortly.</div>';
+                    form.reset();
+                } else {
+                    formMessages.innerHTML = '<div class="error-msg" style="display:block;">Sorry, there was an error sending your message. Please try again later.</div>';
+                }
             })
             .catch(error => {
-                formMessages.innerHTML = '<div class="error-msg" style="display:block;">Sorry, there was an error sending your message. Please try again later.</div>';
+                formMessages.innerHTML = '<div class="error-msg" style="display:block;">Sorry, there was a network error. Please try again later.</div>';
             });
         });
     </script>
